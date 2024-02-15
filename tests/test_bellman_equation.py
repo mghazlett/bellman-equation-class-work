@@ -5,7 +5,7 @@ import pytest
 from bellman_equation import (KnapsackState, actions, transition, 
                               immediate_reward, bellman_equation,
                               WEIGHTS, VALUES)
-
+#expect test_actions to fail
 def test_actions():
     """
     funcitonal test for the actions function
@@ -26,6 +26,7 @@ def test_bellman_equation():
     assert bellman_equation(start_state) == 7
     start_state = KnapsackState(3,0)
     assert bellman_equation(start_state) == 13
+#DRY code - don't repeat yourself
 
 @pytest.mark.parametrize("state, expected", [
     (KnapsackState(1,0), 7),
